@@ -9,13 +9,17 @@ function onSubmitTodo(event) {
         $('#errorMsg').html('Please fill all Mandatory Fields')
         return;
     }
-    console.log("🚀 ~ file: toDo.js:13 ~ requestBody ~ requestBody:", requestBody)
     $.ajax({
         type: "POST",
         url: "/toDo/addToDo",
-        data: requestBody,
+        data: todoData,
         success: function (response) {
-            console.log("🚀 ~ file: toDo.js:26 ~ response:", response)
+            console.log("🚀 ~ file: toDo.js:26 ~ response:", response.toDoObj)
+            const row = `<tr><td>${response.toDoObj.toDoId}</td>
+            <td>${response.toDoObj.toDoData}</td>
+            <td><input type=checkbox value=${response.toDoObj.isToDoDone}></td></tr>`
+            $('#toDoBody').append(row)
+
 
             // hide_loader();
 

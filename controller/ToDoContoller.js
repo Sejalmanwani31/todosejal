@@ -22,7 +22,6 @@ const addTodo = (req, res) => {
             isToDoDone: false
         }
         TODO.push(toDoObj) // insert data
-        console.log("🚀 ~ file: ToDoContoller.js:25 ~ addTodo ~ TODO:", TODO)
         return res.json({ message: 'ToDo added successfully!', status: true, toDoObj })
     } catch (error) {
         console.error(error)
