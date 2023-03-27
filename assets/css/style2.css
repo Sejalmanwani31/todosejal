@@ -1,7 +1,7 @@
 body {
     background-image: linear-gradient(135deg, #FAB2FF 10%, #4c3ce2 100%);
     background-size: cover;
-    /* background-repeat: no-repeat; */
+   
     background-attachment: fixed;
     position: fixed;
     font-family: "Open Sans", sans-serif;
@@ -35,7 +35,7 @@ body {
   }
   .box-form .left {
     background-image: url("../images/imageee.jpg") ;
-    /* object-fit: fill; */
+
     background-size: cover;
     background-repeat: no-repeat;
   
@@ -57,16 +57,17 @@ body {
   }
   
   .box-form .right {
-    padding: 40px;
+    padding: 15px;
     overflow: hidden;
   }
-  @media (max-width: 980px) {
+  
+  @media (max-width: 970px) {
     .box-form .right {
       width: 100%;
     }
   }
   .box-form .right h5 {
-    font-size: 6vmax;
+    font-size: 5vmax;
     line-height: 0;
   }
   .box-form .right p {
@@ -104,8 +105,8 @@ body {
     display: inline-block;
     border: 0;
     outline: 0;
-    box-shadow: 0px 4px 20px 0px #49c628a6;
-    background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
+    box-shadow: 0px 4px 20px 0px #a42973a6;
+    background-image: linear-gradient(135deg, #e14cbc 10%, #d433c1 100%);
   }
   
   label {
@@ -119,7 +120,7 @@ body {
     position: absolute;
     font-family: FontAwesome;
     background: transparent;
-    border: 3px solid #70F570;
+    border: 3px solid #e74cbe;
     border-radius: 4px;
     color: transparent;
     left: -30px;
@@ -131,11 +132,11 @@ body {
     content: ' \f00c';
     color: #fff;
     cursor: pointer;
-    background: #70F570;
+    background: #d15375;
   }
   
   label:hover::before .text-checkbox {
-    background: #70F570;
+    background: #b34298;
   }
   
   label span.text-checkbox {
