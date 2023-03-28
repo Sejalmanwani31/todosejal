@@ -38,9 +38,14 @@ body {
 
     background-size: cover;
     background-repeat: no-repeat;
+   
   
     overflow: hidden;
   }
+  .left {
+    height: 100%;
+    width: 100%;
+}
   .box-form .left .overlay {
     padding: 30px;
     width: 100%;
@@ -49,10 +54,10 @@ body {
     box-sizing: border-box;
   }
   .box-form .left .overlay h1 {
-    font-size: 10vmax;
+    font-size: 5vmax;
     line-height: 1;
     font-weight: 900;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
   
