@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
+const passport =require('passport')
+const session = require('express-session')
 require('dotenv').config({})
-require('./passport')
 
+require('./config/passport');
 
 // assets middleware
 app.use(express.static(__dirname + "/assets"));
@@ -13,7 +15,13 @@ app.use(
         extended: true
     })
 );
-
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(passport.initialize());
+app.use(passport.session());
 //templating engine
 app.set("views", `${__dirname}/views`);
 app.set("view engine", "ejs");
