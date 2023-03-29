@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 require('dotenv').config({})
+require('./passport')
+
 
 // assets middleware
 app.use(express.static(__dirname + "/assets"));
