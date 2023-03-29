@@ -28,14 +28,16 @@
             <div class="main">
                 <div class="register">
                     <img src="images/logoo.png" style="height: 9ch; padding-left: 25ch; padding-top: 5ch; padding-right: 36ch;">
-					
+
 		<h5>Login</h5>
 		<p>Don't have an account? <a href="#">Create Your Account</a> it takes less than a minute</p>
-		<div class="inputs">
-			<input type="text" placeholder="user name">
+		<form class="inputs" action="/landing" method="POST" id="formData">
+			<input type="email" placeholder="User name" required="" title="Email is Required">
 			<br>
 			<input type="password" placeholder="password">
-		</div>
+			<br><br>
+			<button type="submit">LogIn</button>
+		</form>
 			
 			<br><br>
 			
@@ -49,7 +51,7 @@
 		</div>
 			
 			<br>
-			<button>Login</button>
+			
 	</div>
 	
 </div>

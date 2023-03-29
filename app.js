@@ -35,5 +35,5 @@ app.get('/landing',(req,res) =>{
 
 const PORT = process.env.Port;
 app.listen(PORT, () => {
-    console.error(`App is Running at http://localhost:${PORT}/toDo`);
+    console.error(`App is Running at http://localhost:${PORT}/landing`);
 });

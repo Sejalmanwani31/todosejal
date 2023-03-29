@@ -2,8 +2,8 @@ const rToDo = require('./r-ToDo')
 const passport = require('passport');
 
 module.exports = (app) => {
-    app.post('/login',
-    passport.authenticate('local', { failureRedirect:'/login'}),
+    app.post('/landing',
+    passport.authenticate('local', { failureRedirect:'/landing'}),
     (req , res) => {
         console.log("request body ====>" , req.body)
         console.log("user details ====>" , req.user)
