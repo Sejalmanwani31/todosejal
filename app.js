@@ -18,7 +18,7 @@ app.use(
 app.use(session({
     secret: 'your_secret_key',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
 }))
 app.use(passport.initialize());
 app.use(passport.session());
@@ -28,12 +28,12 @@ app.set("view engine", "ejs");
 
 //routes
 require("./routes/r-index")(app);
-app.get('/landing',(req,res) =>{
+app.get('/',(req,res) =>{
     return res.render('landing')
 })
 
 
 const PORT = process.env.Port;
 app.listen(PORT, () => {
-    console.error(`App is Running at http://localhost:${PORT}/landing`);
+    console.error(`App is Running at http://localhost:${PORT}`);
 });
