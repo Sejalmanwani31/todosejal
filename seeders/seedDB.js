@@ -1,4 +1,5 @@
 const user = require('../models/users')
+const bcrypt = require('bcrypt')
 async function seedData(){
     const findFirstUser = await user.findOne({
         email: 'manwani.sejal31@gmail.com'
@@ -12,3 +13,4 @@ async function seedData(){
         })
     }
 }
+module.exports = seedData;

@@ -3,7 +3,7 @@ const app = express();
 const passport =require('passport')
 const session = require('express-session');
 const db = require('./models');
-const{ seedData} = require('./seeders/seedDB')
+const seedData = require('./seeders/seedDB')
 require('dotenv').config({})
 
 require('./config/passport');
@@ -31,7 +31,7 @@ app.set("view engine", "ejs");
 //routes
 require("./routes/r-index")(app);
 app.get('/',(req,res) =>{
-    return res.render('landing')
+    return res.render('login')
 })
 db.sequelize.authenticate()
     .then(() => {
@@ -42,7 +42,7 @@ db.sequelize.authenticate()
 
     });
 
- db.sequelize.sync().then(() => seedData())
+db.sequelize.sync().then(() => seedData());
     
 
 
