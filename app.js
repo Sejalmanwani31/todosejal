@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const passport =require('passport')
-const session = require('express-session')
+const session = require('express-session');
+const db = require('./models');
+const{ seedData} = require('./seeders/seedDB')
 require('dotenv').config({})
 
 require('./config/passport');
@@ -31,6 +33,17 @@ require("./routes/r-index")(app);
 app.get('/',(req,res) =>{
     return res.render('landing')
 })
+db.sequelize.authenticate()
+    .then(() => {
+        console.log('Connection established');
+    })
+    .catch((err) => {
+        console.error('unable to connect to database:', err);
+
+    });
+
+ db.sequelize.sync().then(() => seedData())
+    
 
 
 const PORT = process.env.Port;
