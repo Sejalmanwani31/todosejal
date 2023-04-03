@@ -1,35 +1,44 @@
 const passport = require('passport');
  const LocalStrategy = require('passport-local').Strategy;
- const users = [
-    {id:1 , email:'manwani.sejal31@gmail.com' , password: '123@'},
-
- ]
+ const validatePassword  = require('../controller/commonController')
+ const users = require('../models/users')
+ 
  console.log("passport called")
 passport.use(new LocalStrategy({
         usernameField: 'email',
         passwordField: 'password'
     }, 
-     (email, password, done) => {
+     async (email, password, done) => {
         console.log( email, password);
   
-        const user = users.find(user => {
-            return user.email === email
-        })
+        const findUser = await users.findOne( {email, include: 'role' })
         console.log("user");
-        if(!user) {
+        if(!findUser) {
             return done(null , false ,{ message:'Incorrect email'});
         }
-        if(user.password !== password) {
+        if(!validatePassword( password , findUser.password)) {
             return done(null, false , { message: 'Incorrect password'});
         } console.log("user2");
-        return done(null, user);
+        const returnUser= {
+            id: findUser.id ,
+            name : findUser.firstName + ' ' + findUser.lastName,
+            email : findUser.email,
+            role :findUser.role.authority
+        }
+        return done(null, findUser);
     }
 ));
 passport.serializeUser((user,done) => {
     done(null , user.id)
 });
-passport.deserializeUser((id , done) => {
-    const user = users.find(user => user.id === id);
-    return done (null , user);
+passport.deserializeUser(async(id , done) => {
+    const findUser = await users.findOne({id , include: 'role'});
+    const userData = {
+        id: findUser.id ,
+        name : findUser.firstName + ' ' + findUser.lastName,
+        email : findUser.email,
+        role :findUser.role.authority
+    }
+    return done (null , userData);
 });
 module.exports = passport

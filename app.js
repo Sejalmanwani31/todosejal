@@ -42,7 +42,9 @@ db.sequelize.authenticate()
 
     });
 
-db.sequelize.sync().then(() => seedData());
+db.sequelize.sync({
+    force: true,
+}).then(() => seedData());
     
 
 
