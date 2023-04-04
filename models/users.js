@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const roles = require('./roles');
+const roles = require('../models/roles');
 const sequelize = require('./index').sequelize 
 const user = sequelize.define('users',{
     firstName: {
@@ -20,6 +20,6 @@ const user = sequelize.define('users',{
         allowNull: false
     }
 });
-user.belongsTo(role);
+user.belongsTo(roles);
 module.exports = user 
  

@@ -1,5 +1,6 @@
 const user = require('../models/users')
-const bcrypt = require('bcrypt')
+const {hashPassword} = require('../controller/commonController')
+const roles = require('../models/roles')
 async function seedData(){
     
         const findFirstRole = await roles.findOne({
@@ -31,7 +32,7 @@ const findAdminRole = await roles.findOne({ authority: "ROLE_SUPERADMIN"})
             firstName: 'Sejal',
             lastName: 'Manwani',
             email: 'manwani.sejal31@gmail.com',
-            password: await bcrypt.hash('123@', 8 ),
+            password: hashPassword("123@") ,
             roleId : findAdminRole.id
         })
     }

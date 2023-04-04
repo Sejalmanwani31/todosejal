@@ -1,6 +1,6 @@
 const passport = require('passport');
  const LocalStrategy = require('passport-local').Strategy;
- const validatePassword  = require('../controller/commonController')
+ const { validatePassword } = require('../controller/commonController');
  const users = require('../models/users')
  
  console.log("passport called")
