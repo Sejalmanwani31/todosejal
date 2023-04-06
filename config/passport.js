@@ -25,7 +25,7 @@ passport.use(new LocalStrategy({
             email : findUser.email,
             role :findUser.role.authority
         }
-        return done(null, findUser);
+        return done(null, returnUser);
     }
 ));
 passport.serializeUser((user,done) => {
