@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 const sequelize = require('./index').sequelize
-const Todo = sequelize.define('Todo',{
+const todos = sequelize.define('todos',{
     todo: {
         type: Sequelize.STRING,
         allowNull : false
@@ -17,5 +17,5 @@ const Todo = sequelize.define('Todo',{
     
 }
 );
-Todo.belongsTo(users);
-module.exports = Todo
+todos.belongsTo(users);
+module.exports = todos 
