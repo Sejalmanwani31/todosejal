@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize')
 const sequelize = require('./index').sequelize
-const table = sequelize.define('Todo',{
+const Todo = sequelize.define('Todo',{
     todo: {
         type: Sequelize.STRING,
         allowNull : false
     },
     userId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull : false
     },
     isDone: {
@@ -16,4 +16,6 @@ const table = sequelize.define('Todo',{
     
     
 }
-)
+);
+Todo.belongsTo(users);
+module.exports = Todo
