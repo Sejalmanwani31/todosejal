@@ -17,7 +17,9 @@ function onSubmitTodo(event) {
             console.log("🚀 ~ file: toDo.js:26 ~ response:", response.toDoObj)
             const row = `<tr><td>${response.toDoObj.id}</td>
             <td>${response.toDoObj.todo}</td>
-            <td><input type=checkbox value=${response.toDoObj.isDone}></td></tr>`
+            <td><input type=checkbox id="checkboxx" title="check" placeholder="tick" onclick= "updateTodo" value=${response.toDoObj.isDone}> &nbsp &nbsp &nbsp
+     
+            </td></tr>`
             $('#toDoBody').append(row)
 
 

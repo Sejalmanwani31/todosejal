@@ -1,4 +1,5 @@
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
+const user = require('./users');
 const sequelize = require('./index').sequelize
 const users = require('./users')
 const todos = sequelize.define('todos',{
@@ -16,5 +17,8 @@ const todos = sequelize.define('todos',{
     
 }
 );
+function deleteToDo(){
+    
+}
 todos.belongsTo(users);
 module.exports = todos 
