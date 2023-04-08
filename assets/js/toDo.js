@@ -33,3 +33,6 @@ function onSubmitTodo(event) {
     });
 
 }
+function deleted(){
+   
+}
