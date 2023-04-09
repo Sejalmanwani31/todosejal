@@ -17,8 +17,6 @@ const todos = sequelize.define('todos',{
     
 }
 );
-function deleteToDo(){
-    
-}
+
 todos.belongsTo(users);
 module.exports = todos 
