@@ -1,3 +1,4 @@
+
 function onSubmitTodo(event) {
     event.preventDefault()
     const todoData = $('#taskform').serializeArray()
@@ -33,6 +34,8 @@ function onSubmitTodo(event) {
     });
 
 }
-function deleted(){
-   
+
+function deleted(event){
+    event.preventDefault()
+    $('#toDoBody').empty()
 }
