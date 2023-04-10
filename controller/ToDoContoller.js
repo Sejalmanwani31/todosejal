@@ -32,9 +32,19 @@ const addTodo = async(req, res) => {
     }
 }
 
+const deleteAll = async(req,res) => {
+    try{
+        console.log("reached");
+        const deleted = await todos.destroy({where: {}, truncate: true})
+        return res.json({ message : 'Todo Deleted' , status:true ,toDoObjjj : deleted})
+    } catch(error){
+        console.error(error)
+    }
+}
 
 
 module.exports = {
     index,
-    addTodo
+    addTodo,
+    deleteAll
 }
