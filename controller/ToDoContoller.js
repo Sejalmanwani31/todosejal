@@ -41,7 +41,15 @@ const deleteAll = async(req,res) => {
         console.error(error)
     }
 }
-
+const checked = async(req,res) => {
+    try{
+        console.log("reached");
+        const updatedData = await todos.update({isDone: true },{where:{}})
+        return res.json({ message : 'Task completed' , status:true ,toDotask : changed})
+    } catch(error){
+        console.error(error)
+    }
+}
 
 module.exports = {
     index,

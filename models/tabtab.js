@@ -1,3 +1,4 @@
+const { Model } = require('sequelize');
 const Sequelize = require('sequelize');
 const user = require('./users');
 const sequelize = require('./index').sequelize
