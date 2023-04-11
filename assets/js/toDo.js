@@ -56,7 +56,7 @@ function deleted(event){
 //     console.log(selectedCheck)
 //  })
 function upDate(_this){
-    console.log("check is working");
+   
     const check = $(_this).data('id')
     $.ajax({
         type :"PUT",

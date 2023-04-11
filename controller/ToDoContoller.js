@@ -34,7 +34,7 @@ const addTodo = async(req, res) => {
 
 const deleteAll = async(req,res) => {
     try{
-        console.log("reached");
+    
         const deleted = await todos.destroy({where: {}, truncate: true})
         return res.json({ message : 'Todo Deleted' , status:true ,toDoObjjj : deleted})
     } catch(error){
@@ -45,10 +45,9 @@ const check = async(req,res) => {
     try{
         
         
-         console.log("working");
          const usserId = req.body.check
          console.log(usserId);
-        const result= await todos.update({ isDone: "true"} , {where: {userId: usserId}})
+        const result = await todos.update({ isDone: "true"} , {where: {userId: usserId}})
         return res.json({ message: 'Task completed successfully!', status: true, toDoObjj : result })
     }catch (error) {
         console.error(error)
