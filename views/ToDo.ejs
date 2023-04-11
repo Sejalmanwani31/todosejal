@@ -35,7 +35,20 @@
                 </tr>
             </thead>
             <tbody id="toDoBody">
-
+                <% findAllTodo.forEach((index) =>{%>
+                    <%= index%>
+                    <tr>
+                    <td>
+                        <%= index.id%>
+                    </td>
+                    <td>
+                        <%= index.todo%>
+                    </td>
+                    <td>
+                        <%= index.isDone%>
+                    </td></tr>
+        
+                  <% })%>
             </tbody>
         </table>
                 </div>

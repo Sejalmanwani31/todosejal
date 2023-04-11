@@ -3,9 +3,10 @@ const todos = require("../models/tabtab")
 const TODO = []
 let id = 0
 
-const index = (req, res) => {
+const index = async(req, res) => {
     try {
-        return res.render('ToDo')
+const findAllTodo = await todos.findAll({where :{ userId : req.user.id}})
+        return res.render('ToDo',{findAllTodo})
     } catch (error) {
         console.error(error)
     }
