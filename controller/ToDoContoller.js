@@ -41,12 +41,16 @@ const deleteAll = async(req,res) => {
         console.error(error)
     }
 }
-const checked = async(req,res) => {
+const check = async(req,res) => {
     try{
-        console.log("reached");
-        const updatedData = await todos.update({isDone: true },{where:{}})
-        return res.json({ message : 'Task completed' , status:true ,toDotask : changed})
-    } catch(error){
+        
+        
+         console.log("working");
+         const usserId = req.body.check
+         console.log(usserId);
+        const result= await todos.update({ isDone: "true"} , {where: {userId: usserId}})
+        return res.json({ message: 'Task completed successfully!', status: true, toDoObjj : result })
+    }catch (error) {
         console.error(error)
     }
 }
@@ -54,5 +58,6 @@ const checked = async(req,res) => {
 module.exports = {
     index,
     addTodo,
-    deleteAll
+    deleteAll,
+    check
 }
