@@ -43,11 +43,9 @@ const deleteAll = async(req,res) => {
 }
 const check = async(req,res) => {
     try{
-        
-        
-         const usserId = req.body.check
-         console.log(usserId);
-        const result = await todos.update({ isDone: "true"} , {where: {userId: usserId}})
+        const checkedId = req.body.check
+        console.log(checkedId);
+        const result = await todos.update({ isDone: true } , {where: {Id : checkedId}})
         return res.json({ message: 'Task completed successfully!', status: true, toDoObjj : result })
     }catch (error) {
         console.error(error)

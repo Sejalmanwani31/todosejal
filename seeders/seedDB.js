@@ -36,5 +36,6 @@ const findAdminRole = await roles.findOne({ authority: "ROLE_SUPERADMIN"})
             roleId : findAdminRole.id
         })
     }
+    
 }
 module.exports = seedData;
