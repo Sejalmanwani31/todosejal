@@ -19,6 +19,7 @@ function onSubmitTodo(event) {
             const row = `<tr><td>${response.toDoObj.id}</td>
             <td>${response.toDoObj.todo}</td>
             <td><input type=checkbox  title="check" id="checkboxx" data-idd = "${response.toDoObj.id}" placeholder="tick"  onclick ="check(this)" value=${response.toDoObj.isDone}> &nbsp &nbsp &nbsp
+            <button type = submit id = "button2" onclick = "updateTodo(this)" data-update = "${response.toDoObj.id}"> Update </button>
      
             </td></tr>`
             $('#toDoBody').append(row)
@@ -66,4 +67,16 @@ function check(_this){
             console.log(response);
         }
     })
+}
+function updateTodo(_this){
+    const s = prompt("Edit your Task",)
+    // const update = $(_this).data('update')
+    // $.ajax({
+    //     type :"PUT",
+    //     url: "/toDo/update",
+    //     data: {update},
+    //     success: function(response){
+    //         console.log(response);
+    //     }
+    // })
 }

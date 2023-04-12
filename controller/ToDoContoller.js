@@ -52,6 +52,16 @@ const check = async(req,res) => {
         console.error(error)
     }
 }
+// const update  = async(req,res) => {
+//     try{
+//         const updatedId = req.body.check
+//         console.log(updatedId);
+//         const result = await todos.update({ todo:  } , {where: {Id : updatedId}})
+//         return res.json({ message: 'Task completed successfully!', status: true, toDoObjj : result })
+//     }catch (error) {
+//         console.error(error)
+//     }
+// }
 
 module.exports = {
     index,

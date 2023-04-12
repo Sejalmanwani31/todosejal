@@ -36,7 +36,7 @@
             </thead>
             <tbody id="toDoBody">
                 <% findAllTodo.forEach((index) =>{%>
-                    <%= index%>
+                
                     <tr>
                     <td>
                         <%= index.id%>
@@ -45,7 +45,8 @@
                         <%= index.todo%>
                     </td>
                     <td>
-                        <%= index.isDone%>
+                        <%= index.isDone%> 
+     %>
                     </td></tr>
         
                   <% })%>
