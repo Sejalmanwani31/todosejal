@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 
 function onSubmitTodo(event) {
     event.preventDefault()
@@ -48,14 +50,7 @@ function deleted(event){
     })
 }
 
-//  const checkboxes = $('#checkboxx');
-//  const selectedCheck = []
-//  checkboxes.change(function(){
-//     selectedCheck = checkboxes.filter(":checked").map(function(){
-//         return this.value;
-//     }).get()
-//     console.log(selectedCheck)
-//  })
+
 function check(_this){
     console.log("check is working");
     const check = $(_this).data('idd')
@@ -69,14 +64,17 @@ function check(_this){
     })
 }
 function updateTodo(_this){
-    const s = prompt("Edit your Task",)
-    // const update = $(_this).data('update')
-    // $.ajax({
-    //     type :"PUT",
-    //     url: "/toDo/update",
-    //     data: {update},
-    //     success: function(response){
-    //         console.log(response);
-    //     }
-    // })
+   
+    console.log("chal rha h")
+    const update = $(_this).data('update')
+    $.ajax({
+        type :"PUT",
+        url: "/toDo/update",
+        data: {update},
+        success:  function(response){
+            $('#taskinput').val(response.toDoObj1.todo)
+            console.log("hey")
+            console.log(response);
+        }
+   })
 }

@@ -45,8 +45,9 @@
                         <%= index.todo%>
                     </td>
                     <td>
-                        <%= index.isDone%> 
-     %>
+                        <input type="checkbox" title="check" id="checkboxx" onclick="check(this)"
+                        <%= index.isDone? 'checked':'' %> >
+    
                     </td></tr>
         
                   <% })%>
