@@ -1,4 +1,4 @@
-const { response } = require("express");
+
 
 
 function onSubmitTodo(event) {
@@ -67,14 +67,18 @@ function updateTodo(_this){
    
     console.log("chal rha h")
     const update = $(_this).data('update')
+    console.log(update , "hello")
     $.ajax({
         type :"PUT",
         url: "/toDo/update",
         data: {update},
-        success:  function(response){
-            $('#taskinput').val(response.toDoObj1.todo)
-            console.log("hey")
+        success: function(response){
             console.log(response);
+            $('#taskinput').val(response.toDoObj1.todo)
+            $('#tasksubmit').val('UPDATE')
+           
+            
+          
         }
    })
 }
