@@ -70,25 +70,34 @@ function getTodo(_this){
         $('#taskinput').val(response.toDoObj.todo)
         $('#tasksubmit').val("Update Task") ;
         $('#submitTodo').html(`
-        <input  id="updatetasksubmit" value="Update Task" data-todoid=${response.toDoObj.id} onclick="updateTask(this)">`)
+        <input type = "button" id="updatetasksubmit" value="Update Task" data-todoid=${response.toDoObj.id} onclick="updatetask(this)">`)
 
 
     }
+    
 })
 }
 function updatetask(_this){
-    console.log("updateTodo working", 
-    _this);
-    const updatedTask = $(_this).data('todoid');
-    console.log(updatedTask)
+
+    
+    const todoId = $(_this).data('todoid');
+    const value = $("#taskinput").val();
+   
+    console.log(todoId);
     $.ajax({
-    type:"PUT",
-    url: "/toDo/",
-    data:{updatedTask},
-    success :function(response){
-        console.log(response)}
+        type:"PUT",
+        url:"/toDo/updatedTask",
+      
+        data:{todoId,value},
+        success:
+        function(response){
+            console.log(response);
+            window.location.reload();
+        }
+    
     })
-}
+    }
+
 
             
           

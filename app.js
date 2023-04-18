@@ -41,11 +41,12 @@ db.sequelize.authenticate()
         console.error('unable to connect to database:', err);
 
     });
-
+   
 db.sequelize.sync({
     force: false,
 }).then(() => seedData());
-    
+
+
 
 
 const PORT = process.env.Port;
