@@ -1,5 +1,6 @@
 
 const todos = require("../models/tabtab")
+const users = require("../models/users")
 
 const TODO = []
 let id = 0
@@ -86,6 +87,17 @@ const updatedTask = async(req,res)=>{
             console.log(error)
     }
 }
+const userData = async(req,res)=>{
+    try{
+       console.log('seju')
+       
+        const ReturnUser = await users.findOne({where:{id:req.user.id}})
+        return res.json({message:"update on screen working",status:true,object1:ReturnUser})
+    }
+    catch(error){
+            console.log(error)
+    }
+}
  
 
 module.exports = {
@@ -94,6 +106,7 @@ module.exports = {
     deleteAll,
     check,
     getSingleToDo,
-    updatedTask
+    updatedTask,
+    userData
     
 }

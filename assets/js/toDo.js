@@ -98,8 +98,8 @@ function updatetask(_this){
     })
     }
 
-function userProfile(event){
-    event.preventDefault()
+function userProfile(_this){
+   
     document.querySelector('#header').style.display = "none";
     document.querySelector('#header').style.pointerEvents = "none";
      document.querySelector('#main').style.display = "none";
@@ -108,6 +108,16 @@ function userProfile(event){
      document.querySelector('.form').style.pointerEvents = "all";
     $('#userButton').val("Home");
     $('#buTTon').html(`<input id="homeButton" type="submit" value="Home" onclick="gotoHome(event)">`);
+    const userid = $(_this).data('user');
+    $.ajax({
+        type:"GET",
+        url:"/toDo/userData",
+      
+        data:{userid},
+        success:
+        function(response){
+            console.log(response);
+        }})
 }
 function gotoHome(event){
     window.location.reload();

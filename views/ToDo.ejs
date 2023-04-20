@@ -10,27 +10,27 @@
     <nav class="navbar">
         <ul>
             <li><a type="button" href="/logout">Log Out</a></li>
-            <li id="buTTon"><input id="userButton" type="submit" value="User Profile" onclick="userProfile(event)"></li>
+            <li id="buTTon"><input id="userButton" type="submit" value="User Profile" data-user="${req.user.id}"  onclick="userProfile(this)"></li>
            
         </ul>
     </nav>
-    <form class="form container">
+    <form class="form container" >
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="exampleInputEmail1"  placeholder=manwani.sejal31@gmail.com>
           <i class="fa-solid fa-pen"></i>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-          <i class="fa-solid fa-pen"></i>
-          <div><button type="button" data-toggle="modal" class="btn" data-target="#exampleModal">Change Password</button></div>
+          <!-- <input type="password" class="form-control" id="exampleInputPassword1"> -->
+          
+          <div><button type="button" data-toggle="modal" class="btn" data-target="#exampleModal"><i class="fa-solid fa-pen"></i></button></div>
         </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Reset Your Password</h1>
                   
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -47,12 +47,12 @@
           </div>
         <div class="mb-3">
           <label for="exampleInputfirstName" class="form-label">First Name</label>
-          <input type="text" class="form-control" id="exampleInputfirstName">
+          <input type="text" class="form-control" id="exampleInputfirstName" placeholder="Sejal">
           <i class="fa-solid fa-pen"></i>
         </div>
         <div class="mb-3">
           <label for="exampleInputlastname" class="form-label">Last Name</label>
-          <input type="text" class="form-control" id="exampleInputlastname">
+          <input type="text" class="form-control" id="exampleInputlastname" placeholder="Manwani">
           <i class="fa-solid fa-pen"></i>
         </div>
 
