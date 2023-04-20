@@ -11,7 +11,7 @@ module.exports = (app) => {
         return res.redirect('/toDo/');
     }
     )
-    app.post('/logout', function  (req, res )
+    app.get('/logout', function  (req, res )
     {req.logout(function(err) {
         if (err) { return next(err); }
         res.redirect('/');

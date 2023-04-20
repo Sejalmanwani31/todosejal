@@ -41,8 +41,27 @@ header{
     text-decoration: none;
     cursor: pointer;
 }
-.navbar li a:hover{
+.navbar li #userButton{
+	padding: 3px 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.navbar li a:hover, #userButton:hover{
     background-color: red;
+}
+#homeButton{
+	padding: 3px 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+#homeButton:hover{
+	background-color: red;
+}
+
+
+.form{
+	display: none;
+	pointer-events: none;
 }
 header h1{
 	font-size: 2.5rem;

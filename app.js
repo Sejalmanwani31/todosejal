@@ -33,6 +33,8 @@ require("./routes/r-index")(app);
 app.get('/',(req,res) =>{
     return res.render('login')
 })
+// app.get('/user',(req,res) =>{
+//     return res.render('userProfile')})
 db.sequelize.authenticate()
     .then(() => {
         console.log('Connection established');

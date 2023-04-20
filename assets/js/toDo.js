@@ -98,7 +98,19 @@ function updatetask(_this){
     })
     }
 
-
-            
+function userProfile(event){
+    event.preventDefault()
+    document.querySelector('#header').style.display = "none";
+    document.querySelector('#header').style.pointerEvents = "none";
+     document.querySelector('#main').style.display = "none";
+     document.querySelector('#main').style.pointerEvents = "none";
+     document.querySelector('.form').style.display = "block";
+     document.querySelector('.form').style.pointerEvents = "all";
+    $('#userButton').val("Home");
+    $('#buTTon').html(`<input id="homeButton" type="submit" value="Home" onclick="gotoHome(event)">`);
+}
+function gotoHome(event){
+    window.location.reload();
+}           
           
         
