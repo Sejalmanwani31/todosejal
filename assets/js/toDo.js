@@ -117,6 +117,10 @@ function userProfile(_this){
         success:
         function(response){
             console.log(response);
+            $('#exampleInputfirstName').val(response.object1.firstName);
+            $('#exampleInputlastname').val(response.object1.lastName);
+            $('#exampleInputEmail1').val(response.object1.email);
+            $('#exampleInputPassword1').val(response.object1.password);
         }})
 }
 function gotoHome(event){
