@@ -98,6 +98,16 @@ const userData = async(req,res)=>{
             console.log(error)
     }
 }
+const changeUserDetails = async(req,res)=>{
+    try{
+        console.log(req.body.newEmail)
+        const UserDetails = await users.update({email:req.body.newEmail ,
+            firstName : req.body.newFname , lastName : req.body.newLname}, {where:{id:1}})
+            return res.json({message:"user details changed",status:true,object2:UserDetails})
+    } catch(error){
+        console.log(error)
+}
+}
  
 
 module.exports = {
@@ -107,6 +117,7 @@ module.exports = {
     check,
     getSingleToDo,
     updatedTask,
-    userData
+    userData,
+    changeUserDetails
     
 }

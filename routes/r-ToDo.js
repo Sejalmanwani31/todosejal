@@ -9,4 +9,5 @@ router.put('/check',toDoController.check)
 router.get('/getSingleToDo',toDoController.getSingleToDo)
 router.put("/updatedTask",toDoController.updatedTask)
 router.get("/userData", toDoController.userData)
+router.put('/changeUserDetails',toDoController.changeUserDetails)
 module.exports = router

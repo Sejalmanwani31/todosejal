@@ -126,5 +126,21 @@ function userProfile(_this){
 function gotoHome(event){
     window.location.reload();
 }           
-          
-        
+function SaveChanges(event){
+    event.preventDefault();
+    const newEmail = $('#exampleInputEmail1').val();
+    const newFname =  $('#exampleInputfirstName').val();
+    const newLname =  $('#exampleInputlastname').val();
+    // const newPass =  $('#exampleInputPassword1').val();
+    console.log("sejal")
+    $.ajax({
+        type:"PUT",
+        url:"/toDo/changeUserDetails",
+      
+        data:{newEmail,newFname,newLname},
+        success:
+        function(response){
+            console.log(response);
+        }
+        })
+}          
